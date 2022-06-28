@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MyinvokController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +21,19 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/test-one', function () {
+    // app()->make('test_service_container');
+    return view('test');
+});
+
+Route::get('/test-two', function () {
+    Hunter::test();
+});
+Route::get('/city', function () {
+   dd('this is my city');
+})->middleware('examplemid');
+
+Route::get('/myinvoke', MyinvokController::class);
 
 require __DIR__.'/auth.php';

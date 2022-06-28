@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    This is my test print
+    This number is {{$number['a']}}
+    
 </body>
 </html>
