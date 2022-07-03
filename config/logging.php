@@ -117,6 +117,13 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        // example log file gen
+        'contactstore' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/contact.log'),
+            'level' => 'info',
+        ],
     ],
 
 ];

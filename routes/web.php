@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MyinvokController;
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,9 @@ use App\Http\Controllers\MyinvokController;
 */
 
 Route::get('/', function () {
+    \Log::channel('contactstore')->info('this is a test log report '.rand(1,20));
     return view('welcome');
+
 });
 
 Route::get('/dashboard', function () {
