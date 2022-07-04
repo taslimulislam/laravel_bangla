@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MyinvokController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ Route::get('/', function () {
 
 });
 
+Route::get('/mytest/{id}', [TestController::class, 'testfunction']);
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 Route::get('/test-one', function () {
     // app()->make('test_service_container');
